@@ -14,7 +14,7 @@ like merge sort, then the complexity becomes O(nLogn).
 
 using namespace std;
 
-void Quick_sort(int arr[], int left, int right)
+void Quick_sort(int arr[], int left, int right, int scratch[])
 {
     int i=left, j=right;
     int tmp;
