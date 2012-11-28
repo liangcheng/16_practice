@@ -14,10 +14,12 @@ like merge sort, then the complexity becomes O(nLogn).
 
 using namespace std;
 
-void Quick_sort(int arr[], int left, int right, int scratch[])
+void Quick_sort(int arr[], int left, int right)
 {
     int i=left, j=right;
     int tmp;
+
+	//pivoting
     int pivot = arr[(left+right)/2];
 
     //partition
@@ -55,3 +57,5 @@ int main()
 
     return 0;
 }
+
+

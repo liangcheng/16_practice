@@ -34,7 +34,7 @@ int partition(char A[], int si, int ei)
     exchange (&A[i + 1], &A[ei]);
     return (i + 1);
 }
- 
+
 
 /* Implementation of Quick Sort
 A[] --> Array to be sorted

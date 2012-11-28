@@ -5,65 +5,63 @@ worst case O(log(n)). divide and conque.
 
 #include <iostream>
 
-using namespace std;
-
-void Merge(int arr[], int left, int mid, int right, int helper[]);
-
-
-void Merge_sort(int arr[], int left, int right, int helper[])
-{
-    if(left<right)
-    {
-        int middle = (left+right)/2;
-        Merge_sort(arr, left, middle, helper);
-        Merge_sort(arr, middle+1, right, helper);
-        Merge(arr, left, middle, right, helper);
-    }
-};
-
-void Merge(int arr[], int left, int mid, int right, int helper[])
-{
-    for(int i=left;i<=right;++i)
-        helper[i] = arr[i];
-
-        int helper_left = left;
-        int helper_right = mid +1;
-        int current = left;
-
-        while(helper_left<=mid &&helper_right <=right)
-        {
-            if(helper[helper_left]<=helper[helper_right])
-            {
-                arr[current] = helper[helper_left];
-                helper_left++;
-            }
-            else
-            {
-                arr[current] = helper[helper_right];
-                helper_right++;
-            }
-            current++;
-
-            int remaining = mid- helper_left;
-            for(int i=0; i<=remaining; i++)
-                arr[current+i] =helper[helper_left+i];
+void Merge(int* ipA, int iEnd1, int iEnd2) {
+    int i = 0;
+    int j = iEnd1;
+    int k = 0;
+    int* ipTemp = new int[iEnd2];
+    // Take each next smallest element
+    while (i < iEnd1 && j < iEnd2) {
+        if (ipA[i] < ipA[j]) {
+            ipTemp[k] = ipA[i];
+            ++i;
+        } else {
+            ipTemp[k] = ipA[j];
+            ++j;
         }
+        ++k;
+    }
+    // Copy any remaining elements of the 1st array
+    while (i < iEnd1) {
+        ipTemp[k] = ipA[i];
+        ++i;
+        ++k;
+    }
+    // Copy any remaining elements of the 2nd array
+    while (j < iEnd2) {
+        ipTemp[k] = ipA[j];
+        ++j;
+        ++k;
+    }
+    // Copy the merged array back to the original
+    for (int iIndex = 0; iIndex < iEnd2; ++iIndex) {
+        ipA[iIndex] = ipTemp[iIndex];
+    }
+    delete [] ipTemp;
+}
 
-};
 
 
+int main() {
+    using namespace std;
 
-int main()
-{
-    int a[] = {12,10,43,23,-78,45,123,56,98,41,90,24};
-    int num = sizeof(a)/sizeof(int);
-    int helper[num];
+    int iaArray[] = {24, 5, 3, 35, 14, 23, 19};
+    int iSize = 7;
 
+    // Merge Sort
+    for (int i = 1; i < iSize; i *= 2) {
+        for (int j = 0; j < iSize - i; j += 2*i) {
+            int iEnd2 = (2*i < iSize - j) ? 2*i : iSize - j;
+            Merge(&(iaArray[j]), i, iEnd2);
+        }
+    }
 
-    Merge_sort(a, 0,num-1, helper);
+    // Output sorted array
+    for (int i = 0; i < iSize; i++){
+        cout << iaArray[i] << "  ";
+    }
+    cout << endl;
 
-    for(int i=0; i<num; i++)
-        cout<<a[i]<<" ";
-    cout<<endl;
     return 0;
 }
+
