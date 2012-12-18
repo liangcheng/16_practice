@@ -1,0 +1,16 @@
+int[][] jaggedArray = new int[2][]{new int[3]{1,2,3}, new int[4]{1,2,3,4}};
+
+foreach (int elem in jaggedArray[0])
+  Console.Write(elem);
+
+foreach (int elem in jaggedArray[1])
+  Console.Write(elem);
+
+foreach(int[] line in jaggedArray)
+{
+  foreach(int element in line)
+  {
+    Console.Write(element);
+    Console.Write("\n");
+}
+}
