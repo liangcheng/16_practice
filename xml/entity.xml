@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE company[
+
+<!ENTITY ShengSiYuan "shensiyuan">
+<!ENTITY address "BeiJingShangDi">
+
+]>
+
+<company>
+	<name>&ShengSiYuan;</name>
+	<address>&address;</address>
+</company>
+

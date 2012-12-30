@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<people>
+	<person personId="E01">
+		<name>Tony Blair</name>
+		<address>10 Downing Street, London, UK</address>
+		<tel>(061) 98765</tel>
+		<fax>(061) 98765</fax>
+		<email>blair@everywhere.com</email>
+	</person>
+	
+	<person personId="E02">
+		<name>Bill Clinton</name>
+		<address>White House, USA</address>
+		<tel>(001) 6400 98765</tel>
+		<fax>(001) 6400 98765</fax>
+		<email>bill@everywhere.com</email>
+	</person>
+
+	<person personId="E03">
+		<name>Tom Cruise</name>
+		<address>57 Jumbo Street, New York, USA</address>
+		<tel>(001) 4500 67859</tel>
+		<fax>(001) 4500 67859</fax>
+		<email>cruise@everywhere.com</email>
+	</person>
+
+	<person personId="E04">
+		<name>Linda Goodman</name>
+		<address>78 Crax Lane, London, UK</address>
+		<tel>(061) 98765</tel>
+		<fax>(061) 98765</fax>
+		<email>linda@everywhere.com</email>
+	</person>
+</people>
