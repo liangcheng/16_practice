@@ -2,7 +2,10 @@
 * test the singleton design pattern
 * 单例模式的作用就是保证在整个应用程序的生命周期中，任何一个时刻，
 * 单例类的实例都只存在一个;
+*
 * static object, non-implemented copy constructor and assign operation,
+* private ctor, static instance().
+*
 * @author liang cheng
 * @date 11/28/2012
 **/
@@ -61,9 +64,10 @@ void Singleton::Show_star()
 
 int main()
 {
-    Singleton::Instance()->Show_star();
+    Singleton *p1 = Singleton::Instance();
+    Singleton *p2 = Singleton::Instance();
 
-    if (Singleton::Instance() == Singleton::Instance())
+    if (p1 == p2)
         cout << " s1 and s2 share the same address! \n";
 
     return 0;
