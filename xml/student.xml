@@ -1,0 +1,21 @@
+<?xml version="1.0">
+<students xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="student.xsd">
+	<student id="1">
+		<name>zhangSan</name>
+		<gender>male</gender>
+		<age>20</age>
+	</student>
+
+	<student id="2">
+		<name>liSi</name>
+		<gender>female</gender>
+		<age>19</age>
+	</student>
+
+	<student id="3">
+		<name>wangWu</name>
+		<gender>male</gender>
+		<age>21</age>
+	</student>
+</students>

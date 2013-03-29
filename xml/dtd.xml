@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE poem[
+<!ELEMENT poem (author+, title*, content?)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT content (#PCDATA)>
+<!ATTLIST title name CDATA #REQUIRED> 
+]>
+
+<poem>
+	<author>wangwei</author>
+	<title name="wangba">luchai</title>
+	<content>xxxxxxxxxxxxxxxxxxxxxx</content>
+	<content>xxxxxxxxxxxxxxxxxxxxxxx </content>
+</poem>
+
+
+
+
+
+
+
+
+
+
